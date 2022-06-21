@@ -1,0 +1,50 @@
+<html lang="en">
+<head>    
+    <title>Dialog</title>
+    <link rel="stylesheet" href="dialog.css">
+</head>
+<body>
+    
+    <button id="add_new_avatar" type="button" class="avatar-button avatar-button__add-new">+</button>
+    
+    <dialog id="add_avatar_dialog" >
+        <header>
+            <div class="header-title">
+                <span><img src="/user-profile.svg" alt="user-profile" class="profile"></span>
+                <h1>New user</h1>
+            </div>
+            <button class="btn-close">+</button>
+        </header>
+        <div class="upload">
+            <label for="">upload an image</label>
+            <input type="file" required> 
+                       
+            <p >maximum upload 1MB</p>       
+        </div>
+        <div class="buttons">
+        <button class="btn-cancel">clear</button>
+        <div>
+        <button>cancel</button>
+        <button>confirm</button>
+    </div>
+    </div>
+    </dialog> 
+
+    <script>
+        (function(){
+
+            const addAvatarButtonElement = document.querySelector("#add_new_avatar");
+            const addAvatarDialogElement = document.querySelector("#add_avatar_dialog");
+            
+            if(!addAvatarButtonElement) return;
+            if(!addAvatarDialogElement) return;
+
+            addAvatarButtonElement.onclick = ()=>{
+                addAvatarDialogElement.showModal();
+            }
+
+        })();     
+
+    </script>
+</body>
+</html>
